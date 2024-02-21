@@ -14,19 +14,26 @@
   font-weight: normal;
 }
 
+.separador{
+  background-color: #e4e4e4; 
+  width: 200px; 
+  height: 4px; 
+  border-radius: 20px;
+}
+
 span{
   text-decoration: none;
 }
 
 body {
   font-family: 'Montserrat', Arial, sans-serif;
-  background: url('./assets/imgs/bg.jpg');
+  background: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .app {
-  padding: 2vh 2vw 2vh 2vw;
+  padding: 1vh 2vw 2vh 2vw;
 }
 
 .content {
@@ -49,22 +56,28 @@ body {
   font-weight: bold;
   margin: 0;
 }
-.header p {
+.header p{
   font-family: 'Kelson', Arial, sans-serif;
   font-size: 24px;
   font-weight: normal;
-  margin: 0;
+  margin-top: 4px;
+}
+
+h4{
+  font-family: 'Kelson', Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Formulario */
 
 .forms {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   align-items: center;
-  background-color: rgba(211, 210, 210, 0.5);
-  border-radius: 20px;
 }
 .forms form {
   display: grid;
@@ -75,12 +88,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* top right bottom left */
   padding: 1vh 1vw 1vh 1vw;
   text-align: right;
 }
 .form-input p {
-  width: 15%;
   margin: 2px;
   font-weight: bolder;
 }
@@ -91,7 +102,7 @@ input,
 select {
   outline: none;
   box-sizing: border-box;
-  border: 2px solid #b1b1b1;
+  border: 1px solid #b1b1b1;
   border-radius: 10px;
   height: 40px;
   background-color: white;
@@ -105,11 +116,12 @@ select:focus {
   outline: none;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
+
 button {
   font-family: inherit;
   border-radius: 10px;
   border: 0;
-  background-color: #696969;
+  background-color: rgba(0, 0, 0, 0.25);
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
   color: #ffffff;
   outline: none;
@@ -119,26 +131,105 @@ button {
   transition: 500ms;
 }
 
-/* Botao */
+/* Botao estilos gerais*/
+
 .center-button {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 15px;
+  gap: 20px;
 }
 button {
   cursor: pointer;
-  padding: 0 10px;
+  padding: 0 0px;
 }
-button:hover {
-  background-color: #27ae60;
+
+/* Botao copiar assinatura*/
+.Btn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  transition: 100ms;
+  background-color: rgb(2, 153, 153);
 }
-button h2 {
-  font-size: 16px;
-  font-weight: 500;
+
+.svgIcon {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: teal;
 }
+
+.Btn:hover .text {
+  background-color: rgb(0, 133, 133);
+}
+
+.Btn:hover .svgIcon {
+  background-color: rgb(0, 105, 105);
+}
+
+/* Botao ajuda*/
+.Btn2{
+  width: 250px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.text2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(150, 150, 150);
+}
+
+.svgIcon2 {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(135, 135, 135);
+}
+
+.Btn2:hover .text2 {
+  background-color: rgb(110, 110, 110);
+}
+
+.Btn2:hover .svgIcon2 {
+  background-color: rgb(120, 120, 120);
+
+}
+
 
 /* Assinatura */
 .assinatura-wrapper {
@@ -156,6 +247,7 @@ button h2 {
 
 #nome-assinatura{
   font-size: 16px;
+  color: #005550;
 }
 
 #cargo-assinatura, #local-assinatura, #celular-assinatura{
@@ -164,28 +256,27 @@ button h2 {
   text-decoration: none;
 }
 
-/* Rodape */
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  margin: 40px auto 40px auto;
-  padding: 20px;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
-  width: fit-content;
-}
-footer div {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto */
+  padding: 10px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
 }
 
-footer div p {
-  margin-right: 10px;
+footer a{
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
 }
+
+footer img{
+  max-width: 6px;
+  margin-bottom: 5px;
+}
+
 
 @media (max-width: 800px) {
   .app {

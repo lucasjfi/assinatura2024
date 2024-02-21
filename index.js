@@ -12,10 +12,10 @@ const cargosInput = document.getElementById('cargos');
 // adiciona um metodo que realiza uma funcao quando um eventoacontece
 // no caso o evento chama-se: "input" e ocorre quando o texto digitado se altera
 // ou quando o valor selecionado altera
-nomeInput.addEventListener('input', () => btn())
-localInput.addEventListener('input', () => btn())
-celularInput.addEventListener('input', () => btn())
-cargosInput.addEventListener('input', () => btn())
+nomeInput.addEventListener('input', () => btn(nomeInput))
+localInput.addEventListener('input', () => btn(localInput))
+celularInput.addEventListener('input', () => btn(celularInput))
+cargosInput.addEventListener('input', () => btn(cargosInput))
 
 // encontra os campos a serem preenchidos na assinatura
 const nomeCompletoField = document.getElementById('nome-assinatura');
@@ -23,7 +23,7 @@ const localField = document.getElementById('local-assinatura');
 const celularField = document.getElementById('celular-assinatura');
 const cargoField = document.getElementById('cargo-assinatura');
 
-function btn() {
+function btn(obj) {
   // recebe as informacoes das inputs
   var nome = nomeInput.value;
   var local = localInput.value;
@@ -34,8 +34,8 @@ function btn() {
 
   // coloca os valores nos lugares na assinatura
   nomeCompletoField.innerHTML = editaNome(nomeCompleto);
-  localField.innerHTML = local
-  celularField.innerHTML = editaCelular(celular)
+  localField.innerHTML = editaLocal(local);
+  celularField.innerHTML = editaCelular(celular);
   cargoField.innerHTML = cargo;
 
   // configura os atributos de link
@@ -61,22 +61,22 @@ function editaNome(nome) {
 }
 
 
-// function editalocal(local) {
-//   let palavras = local.split(' ')
-//   // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
-//   for (let i = 0; i < palavras.length; i++) {
-//     // itera entre cada palavra, transformando a primeira letra em maiuscula
-//     palavras[i] = primeirasMaiusculas(palavras[i])
-//   }
-//   if (palavras.join(' ') == ' ') {
-//     // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
-//     // portanto, retorna o valor inicial
-//     return 'Local'
-//   }
-//   // senão, retorna as palavras juntas
-//   //["Diego", "Ferreira"] -> "Diego Ferreira"
-//   return palavras.join(' ')
-// }
+function editaLocal(local) {
+  let palavras = local.split(' ')
+  // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
+  for (let i = 0; i < palavras.length; i++) {
+    // itera entre cada palavra, transformando a primeira letra em maiuscula
+    palavras[i] = primeirasMaiusculas(palavras[i])
+  }
+  if (palavras.join(' ') == ' ') {
+    // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
+    // portanto, retorna o valor inicial
+    return 'Local'
+  }
+  // senão, retorna as palavras juntas
+  //["Diego", "Ferreira"] -> "Diego Ferreira"
+  return palavras.join(' ')
+}
 
 function primeirasMaiusculas(palavra) {
   // Retorna a palavra com a primeira letra maiuscula
