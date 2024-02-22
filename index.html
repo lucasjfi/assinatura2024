@@ -38,26 +38,33 @@
           <div class="form-input">
             <!-- Nesse campo em especifico tem um <select> no lugar da <input> -->
             <p>Cargo</p><input type="text" id="cargos" class="input-text" placeholder="Insira o seu cargo" maxlength="40">
+          </div>
+          <div class="form-input">
+            <p>Local</p><input type="text" id="local" class="input-text" placeholder="Insira o seu local de atuação" maxlength="20">
             <!-- <select id="cargos">
                O value de cada uma das opcoes sera usado (ao inves do que o usuario digitou) 
                <option value="" selected disabled>Selecione o seu cargo</option>
 
-               <optgroup label="Presidência">
-                <option value="Presidente">Presidente</option>
-                <option value="Vice-Presidente">Vice-Presidente</option>
+              <optgroup label="Estado de São Paulo">
+                <option value="matriz">Matriz Itapetininga - SP</option>
+                <option value="cbo">Filial Capão Bonito - SP</option>
+                <option value="sma">Filial São Miguel Arcanjo - SP</option>
+                <option value="itr">Filial Itararé - SP</option>
+                <option value="vrp">Filial Vale do Rio Pardo - SP</option>
+                <option value="cpv">Filial Caçapava - SP</option>
+                <option value="itg">Filial Itatinga - SP</option>
+                <option value="drt">Filial Duartina - SP</option>
+                <option value="lpa">Filial Lençóis Paulista - SP</option>
+                <option value="drd">Filial Dourado - SP</option>
               </optgroup>
 
-              Filial São Miguel Arcanjo - SP
-              cAPÃO
-              itarare
-              vale
-              caçapava
-              
-              SP
-              itatinga
-              duartina
-              lençois
-              Dourado
+              <optgroup label="Estado do Rio Grande do Sul">
+                <option value="cbo">Filial Capão Bonito - SP</option>
+                <option value="sma">Filial São Miguel Arcanjo - SP</option>
+                <option value="itr">Filial Itararé - SP</option>
+                <option value="vrp">Filial Vale do Rio Pardo - SP</option>
+                <option value="cpv">Filial Caçapava - SP</option>
+              </optgroup>
 
               RS
               São Gabriel
@@ -72,48 +79,7 @@
               Agua clara
               Campo Grande
               Cmapuã
-
-              <optgroup label="Projetos">
-                <option value="Diretor de Projetos">Diretor de Projetos</option>
-                <option value="Gerente de Projetos">Gerente de Projetos</option>
-                <option value="Assessor de Projetos">Assessor de Projetos</option>
-                <option value="Trainee de Projetos">Trainee de Projetos</option>
-              </optgroup>
-              
-              <optgroup label="P&amp;D">
-                <option value="Gerente de P&amp;D">Gerente de P&amp;D</option>
-                <option value="Assessor de P&amp;D">Assessor de P&amp;D</option>
-              </optgroup>
-
-              <optgroup label="Negócios">
-                <option value="Diretor de Negócios">Diretor de Negócios</option>
-                <option value="Gerente de Negócios">Gerente de Negócios</option>
-                <option value="Assessor de Negócios">Assessor de Negócios</option>
-                <option value="Trainee de Negócios">Trainee de Negócios</option>
-              </optgroup>
-              
-              <optgroup label="Marketing">
-                <option value="Diretor de Marketing">Diretor de Marketing</option>
-                <option value="Gerente de Marketing">Gerente de Marketing</option>
-                <option value="Assessor de Marketing">Assessor de Marketing</option>
-                <option value="Trainee de Marketing">Trainee de Marketing</option>
-              </optgroup>
-
-              <optgroup label="Recursos Humanos">
-                <option value="Gerente de Recursos Humanos">Gerente de Recursos Humanos</option>
-                <option value="Assessor de Recursos Humanos">Assessor de Recursos Humanos</option>
-                <option value="Trainee de Recursos Humanos">Trainee de Recursos Humanos</option>
-              </optgroup>
-
-              <optgroup label="Financeiro">
-                <option value="Gerente Financeiro">Gerente Financeiro</option>
-                <option value="Assessor Financeiro">Assessor Financeiro</option>
-                <option value="Trainee Financeiro">Trainee Financeiro</option>
-              </optgroup>
             </select> -->
-          </div>
-          <div class="form-input">
-            <p>Local</p><input type="text" id="local" class="input-text" placeholder="Insira o seu local de atuação" maxlength="20">
           </div>
           <div class="form-input">
             <p>Celular</p><input type="tel" id="celular" class="input-text" placeholder="Insira o seu número corporativo">
@@ -129,18 +95,7 @@
         <!-- Cria a divisao que sera usada para copiar a assinatura -->
         <div class="assinatura-div" id="assinatura-div">
           <!-- Adiciona dentro dela uma tabela -->
-          <!--  -->
-          <!-- 
-          |-------------------------------------|
-          |      |       | |------------------| |
-          |      |       | | icone | telefone | |
-          |      | nome  | |------------------| |
-          | logo | cargo | | icone | telefone | |
-          |      |       | |------------------| |
-          |      |       | | icone |   site   | |
-          |      |       | |------------------| |
-          |-------------------------------------|
-        -->
+
           <table cellpadding="0" cellspacing="0">
             
             <td style="white-space: nowrap;">
@@ -159,9 +114,21 @@
             </td>
             <tr>
             <td>
-              <a href="https://www.canaldedenuncias.com.br/jfisilvicultura/">
+              <!-- <a href="https://www.canaldedenuncias.com.br/jfisilvicultura/">
                 <img style="width: 450px; margin-top: 4px; text-decoration: none;" src="https://jfi.com.br/assinatura/Assets/img/ASSINATURA%20EMAIL%20JFI%20%28500%20x%20130%20px%29%20%283%29%20%282%29.png" />
-              </a>
+              </a> -->
+              <div id="imagem">
+                <a href="https://fluig.jfi.com.br/portal/p/01/pageprocessstart">
+                  <img src="./assets/imgs/img-assinatura/Banner.png" alt="" id="banner">
+                </a>
+                <div style="display: flex;">
+                  <a href="https://www.canaldedenuncias.com.br/jfisilvicultura/"><img src="./assets/imgs/img-assinatura/CanalDenuncias.png" alt="" id="denuncia"></a>
+                  <a href="https://www.instagram.com/jfisilvicultura/"><img src="./assets/imgs/img-assinatura/instagram.png" alt="" id="instagram"></a>
+                  <a href="https://web.facebook.com/jfisilvicultura/"><img src="./assets/imgs/img-assinatura/facebook.png" alt="" id="facebook"></a>
+                  <a href="https://br.linkedin.com/company/jfisilvicultura"><img src="./assets/imgs/img-assinatura/linkedin.png" alt="" id="linkedin"></a>
+                  <a href="https://www.jfi.com.br"><img src="./assets/imgs/img-assinatura/site.png" alt="" id="site"></a>
+                </div>
+              </div>
             </td>
             </tr>
           </table>

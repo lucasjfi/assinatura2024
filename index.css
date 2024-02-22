@@ -228,7 +228,7 @@ button {
 .Btn2:hover .svgIcon2 {
   background-color: rgb(120, 120, 120);
 
-}
+} 
 
 
 /* Assinatura */
@@ -259,10 +259,6 @@ button {
 
 #cargo-assinatura{
   font-weight: bolder;
-}
-
-img{
-  max-width: 450px;
 }
 
 footer {

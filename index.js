@@ -21,9 +21,9 @@ cargosInput.addEventListener('input', () => btn(cargosInput))
 const nomeCompletoField = document.getElementById('nome-assinatura');
 const localField = document.getElementById('local-assinatura');
 const celularField = document.getElementById('celular-assinatura');
-const cargoField = document.getElementById('cargo-assinatura');
+const cargosField = document.getElementById('cargo-assinatura');
 
-function btn(obj) {
+function btn() {
   // recebe as informacoes das inputs
   var nome = nomeInput.value;
   var local = localInput.value;
@@ -36,7 +36,7 @@ function btn(obj) {
   nomeCompletoField.innerHTML = editaNome(nomeCompleto);
   localField.innerHTML = editaLocal(local);
   celularField.innerHTML = editaCelular(celular);
-  cargoField.innerHTML = cargo;
+  cargosField.innerHTML = cargo;
 
   // configura os atributos de link
   celularField.setAttribute('href', `https://wa.me/55${editaCelular(celular).replace(/ /g, '')}`);
@@ -78,7 +78,7 @@ function editaLocal(local) {
   return palavras.join(' ')
 }
 
-// function editaCargo(cargos) {
+// function editaCargo(cargo) {
 //   let palavras = local.split(' ')
 //   // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
 //   for (let i = 0; i < palavras.length; i++) {
