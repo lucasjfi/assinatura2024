@@ -250,7 +250,8 @@ button {
   color: #005550;
 }
 
-#cargo-assinatura, #local-assinatura, #celular-assinatura{
+#cargo-assinatura, #local-assinatura, 
+#celular-assinatura{
   font-size: 12px;
   color: #696969;
   text-decoration: none;
