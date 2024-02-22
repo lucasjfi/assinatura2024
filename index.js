@@ -28,7 +28,7 @@ function btn(obj) {
   var nome = nomeInput.value;
   var local = localInput.value;
   var celular = celularInput.value;
-  var cargo = cargosInput.options[cargosInput.selectedIndex].value;
+  var cargo = cargosInput.value;
 
   let nomeCompleto = nome
 
@@ -77,6 +77,24 @@ function editaLocal(local) {
   //["Diego", "Ferreira"] -> "Diego Ferreira"
   return palavras.join(' ')
 }
+
+// function editaCargo(cargos) {
+//   let palavras = local.split(' ')
+//   // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
+//   for (let i = 0; i < palavras.length; i++) {
+//     // itera entre cada palavra, transformando a primeira letra em maiuscula
+//     palavras[i] = primeirasMaiusculas(palavras[i])
+//   }
+//   if (palavras.join(' ') == ' ') {
+//     // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
+//     // portanto, retorna o valor inicial
+//     return 'Cargo'
+//   }
+//   // senão, retorna as palavras juntas
+//   //["Diego", "Ferreira"] -> "Diego Ferreira"
+//   return palavras.join(' ')
+// }
+
 
 function primeirasMaiusculas(palavra) {
   // Retorna a palavra com a primeira letra maiuscula

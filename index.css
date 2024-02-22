@@ -257,6 +257,14 @@ button {
   text-decoration: none;
 }
 
+#cargo-assinatura{
+  font-weight: bolder;
+}
+
+img{
+  max-width: 450px;
+}
+
 footer {
   position: fixed;
   bottom: 0;
