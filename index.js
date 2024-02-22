@@ -26,7 +26,7 @@ const cargosField = document.getElementById('cargo-assinatura');
 function btn() {
   // recebe as informacoes das inputs
   var nome = nomeInput.value;
-  var local = localInput.value;
+  var local = localInput.options[localInput.selectedIndex].value;
   var celular = celularInput.value;
   var cargo = cargosInput.value;
 
@@ -34,9 +34,9 @@ function btn() {
 
   // coloca os valores nos lugares na assinatura
   nomeCompletoField.innerHTML = editaNome(nomeCompleto);
-  localField.innerHTML = editaLocal(local);
+  localField.innerHTML = local;
   celularField.innerHTML = editaCelular(celular);
-  cargosField.innerHTML = cargo;
+  cargosField.innerHTML = editaCargo(cargo);
 
   // configura os atributos de link
   celularField.setAttribute('href', `https://wa.me/55${editaCelular(celular).replace(/ /g, '')}`);
@@ -61,24 +61,7 @@ function editaNome(nome) {
 }
 
 
-function editaLocal(local) {
-  let palavras = local.split(' ')
-  // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
-  for (let i = 0; i < palavras.length; i++) {
-    // itera entre cada palavra, transformando a primeira letra em maiuscula
-    palavras[i] = primeirasMaiusculas(palavras[i])
-  }
-  if (palavras.join(' ') == ' ') {
-    // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
-    // portanto, retorna o valor inicial
-    return 'Local'
-  }
-  // senão, retorna as palavras juntas
-  //["Diego", "Ferreira"] -> "Diego Ferreira"
-  return palavras.join(' ')
-}
-
-// function editaCargo(cargo) {
+// function editaLocal(local) {
 //   let palavras = local.split(' ')
 //   // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
 //   for (let i = 0; i < palavras.length; i++) {
@@ -88,12 +71,29 @@ function editaLocal(local) {
 //   if (palavras.join(' ') == ' ') {
 //     // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
 //     // portanto, retorna o valor inicial
-//     return 'Cargo'
+//     return 'Local'
 //   }
 //   // senão, retorna as palavras juntas
 //   //["Diego", "Ferreira"] -> "Diego Ferreira"
 //   return palavras.join(' ')
 // }
+
+function editaCargo(cargo) {
+  let palavras = cargo.split(' ')
+  // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
+  for (let i = 0; i < palavras.length; i++) {
+    // itera entre cada palavra, transformando a primeira letra em maiuscula
+    palavras[i] = primeirasMaiusculas(palavras[i])
+  }
+  if (palavras.join(' ') == ' ') {
+    // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
+    // portanto, retorna o valor inicial
+    return 'Cargo'
+  }
+  // senão, retorna as palavras juntas
+  //["Diego", "Ferreira"] -> "Diego Ferreira"
+  return palavras.join(' ')
+}
 
 
 function primeirasMaiusculas(palavra) {
