@@ -172,3 +172,32 @@ function copiar() {
     alert("Copiado para a area de transferência");
   }
 }
+
+// Obtém o botão e o modal
+var btn = document.getElementById("openModalBtn");
+var modal = document.getElementById("myModal");
+
+// Obtém o elemento de fechar dentro do modal
+var span = document.getElementsByClassName("close")[0];
+var fechar = document.getElementById("botao-fechar");
+
+// Quando o usuário clicar no botão, abra o modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Quando o usuário clicar no elemento de fechar, feche o modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Quando o usuário clicar fora do modal, feche-o
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+fechar.onclick = function(){
+  modal.style.display = "none";
+}
