@@ -60,27 +60,9 @@ function editaNome(nome) {
   return palavras.join(' ')
 }
 
-
-// function editaLocal(local) {
-//   let palavras = local.split(' ')
-//   // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
-//   for (let i = 0; i < palavras.length; i++) {
-//     // itera entre cada palavra, transformando a primeira letra em maiuscula
-//     palavras[i] = primeirasMaiusculas(palavras[i])
-//   }
-//   if (palavras.join(' ') == ' ') {
-//     // se não houver nada, quer dizer que o usuario apagou tudo nas inputs
-//     // portanto, retorna o valor inicial
-//     return 'Local'
-//   }
-//   // senão, retorna as palavras juntas
-//   //["Diego", "Ferreira"] -> "Diego Ferreira"
-//   return palavras.join(' ')
-// }
-
 function editaCargo(cargo) {
   let palavras = cargo.split(' ')
-  // separa o nome em palavras: "diego ferreira" -> ["diego", "ferreira"]
+  // separa o nome em palavras
   for (let i = 0; i < palavras.length; i++) {
     // itera entre cada palavra, transformando a primeira letra em maiuscula
     palavras[i] = primeirasMaiusculas(palavras[i])
@@ -91,7 +73,6 @@ function editaCargo(cargo) {
     return 'Cargo'
   }
   // senão, retorna as palavras juntas
-  //["Diego", "Ferreira"] -> "Diego Ferreira"
   return palavras.join(' ')
 }
 
