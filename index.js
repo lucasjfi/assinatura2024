@@ -12,10 +12,10 @@ const cargosInput = document.getElementById('cargos');
 // adiciona um metodo que realiza uma funcao quando um eventoacontece
 // no caso o evento chama-se: "input" e ocorre quando o texto digitado se altera
 // ou quando o valor selecionado altera
-nomeInput.addEventListener('input', () => btn(nomeInput))
-localInput.addEventListener('input', () => btn(localInput))
-celularInput.addEventListener('input', () => btn(celularInput))
-cargosInput.addEventListener('input', () => btn(cargosInput))
+nomeInput.addEventListener('input', () => btn('nomeInput'))
+localInput.addEventListener('input', () => btn('localInput'))
+celularInput.addEventListener('input', () => btn('celularInput'))
+cargosInput.addEventListener('input', () => btn('cargosInput'))
 
 // encontra os campos a serem preenchidos na assinatura
 const nomeCompletoField = document.getElementById('nome-assinatura');
@@ -23,24 +23,22 @@ const localField = document.getElementById('local-assinatura');
 const celularField = document.getElementById('celular-assinatura');
 const cargosField = document.getElementById('cargo-assinatura');
 
-function btn() {
-  // recebe as informacoes das inputs
-  var nome = nomeInput.value;
-  var local = localInput.options[localInput.selectedIndex].value;
-  var celular = celularInput.value;
-  var cargo = cargosInput.value;
-
-  let nomeCompleto = nome
-
-  // coloca os valores nos lugares na assinatura
-  nomeCompletoField.innerHTML = editaNome(nomeCompleto);
-  localField.innerHTML = local;
-  celularField.innerHTML = editaCelular(celular);
-  cargosField.innerHTML = editaCargo(cargo);
-
-  // configura os atributos de link
-  celularField.setAttribute('href', `https://wa.me/55${editaCelular(celular).replace(/ /g, '')}`);
-  // wa.me e o site que redireciona para o whatsapp com o numero a frente
+function btn(obj) {
+  if(obj==='nomeInput'){
+    var nome = nomeInput.value;
+    let nomeCompleto = nome;
+    nomeCompletoField.innerHTML = editaNome(nomeCompleto);
+  }else if(obj === 'localInput'){
+    var local = localInput.options[localInput.selectedIndex].value;
+    localField.innerHTML = local;
+  }else if(obj === 'celularInput'){
+    var celular = celularInput.value;
+    celularField.innerHTML = editaCelular(celular);
+    celularField.setAttribute('href', `https://wa.me/55${editaCelular(celular).replace(/ /g, '')}`);
+  } else if (obj === 'cargosInput'){
+    var cargo = cargosInput.value;
+    cargosField.innerHTML = editaCargo(cargo);
+  }
 }
 
 function editaNome(nome) {
@@ -155,7 +153,7 @@ function copiar() {
 }
 
 // Obtém o botão e o modal
-var btn = document.getElementById("openModalBtn");
+var btn1 = document.getElementById("openModalBtn");
 var modal = document.getElementById("myModal");
 
 // Obtém o elemento de fechar dentro do modal
@@ -163,7 +161,7 @@ var span = document.getElementsByClassName("close")[0];
 var fechar = document.getElementById("botao-fechar");
 
 // Quando o usuário clicar no botão, abra o modal
-btn.onclick = function() {
+btn1.onclick = function() {
   modal.style.display = "block";
 }
 
